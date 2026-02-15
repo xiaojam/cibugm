@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sebaran | CIB UGM</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <span class="top-info">Awardee BIB Kemenag - LPDP Universitas Gadjah Mada</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/bib.ugm/"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-inner">
+                <a href="../index.html" class="logo-container">
+                    <img src="../assets/img/cibugm.png" alt="Logo CIB UGM" class="logo-img">
+                    <div class="logo-text">
+                        <span>CIB UGM</span>
+                        <small>Cakrawala Indonesia Bangkit</small>
+                    </div>
+                </a>
+
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="../index.html" class="nav-link active">Beranda</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">Profil <svg class="arrow" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="history.html">Sejarah</a></li>
+                            <li><a href="structure.html">Struktur Organisasi</a></li>
+                            <li><a href="logo.html">Makna Lambang</a></li>
+                            <li><a href="vision.html">Visi & Misi</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">
+                            Awardee <svg class="arrow" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sebaran.html">Detail Sebaran</a></li>
+                            <li><a href="report.html">Lapor Diri</a></li>
+                            <li><a href="publication.html">Publikasi</a></li>
+                            <li><a href="achievement.html">Prestasi</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="portal.html" class="nav-link">Portal</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content-center">
+            <h1>Statistik & Sebaran</h1>
+            <p>Data Demografi Penerima Beasiswa Indonesia Bangkit UGM</p>
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="sum-icon icon-users"><svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                    <div class="sum-info">
+                        <h3>190</h3>
+                        <p>Total Awardee</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="sum-icon icon-active"><svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                    <div class="sum-info">
+                        <h3>175</h3>
+                        <p>Mahasiswa Aktif</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="sum-icon icon-grad"><svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div>
+                    <div class="sum-info">
+                        <h3>15</h3>
+                        <p>Alumni Lulus</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h4>Komposisi Jenjang Studi</h4>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartJenjang"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h4>Pertumbuhan Awardee per Angkatan</h4>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartAngkatan"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card full-width">
+                    <div class="chart-header">
+                        <h4>Sebaran per Fakultas (Top 5)</h4>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartFakultas"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo"><span>CIB UGM</span></div>
+                <p>Wadah informasi Cakrawala Indonesia Bangkit Universitas Gadjah Mada</p>
+                <br/>
+                <br/>
+                <h4>Hubungi Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:cibugm@gmail.com">cibugm@gmail.com</a></li>
+                    <li>Kampus UGM</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Informasi</h4>
+                <ul class="footer-links">
+                    <li><a href="https://beasiswa.kemenag.go.id/">Beasiswa Kemenag</a></li>
+                    <li><a href="https://www.lpdp.kemenkeu.go.id/">LPDP</a></li>
+                    <li><a href="https://www.ugm.ac.id/">UGM</a></li>
+                    <li><a href="https://cakrawalaindonesiabangkit.or.id/">CIB Pusat</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Akses Cepat</h4>
+                <ul class="footer-links">
+                    <li><a href="https://um.ugm.ac.id/pendaftaran/public/index.php">UM UGM</a></li>
+                    <li><a href="https://pendaftaran-beasiswa.kemenag.go.id/login">Pendaftaran Beasiswa</a></li>
+                    <li><a href="https://simaster.ugm.ac.id">Simaster</a></li>
+                    <li><a href="https://elok.ugm.ac.id/">e-Lok</a></li>
+                    <li><a href="https://pendaftaran-beasiswa.kemenag.go.id/monitoring/login">Monitoring Beasiswa</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="copyright-year"></span> Cakrawala Indonesia Bangkit UGM.</p>
+        </div>
+    </footer>
+
+    <nav class="mobile-bottom-nav">
+        <a href="../index.html" class="nav-item active">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+        </a>
+        <a href="portal.html" class="nav-item">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>Portal</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            <span>FAQ</span>
+        </a>
+        <div class="nav-item" id="menu-toggle-btn">
+            <svg id="icon-menu-open" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg id="icon-menu-close" style="display: none;" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <span>Menu</span>
+        </div>
+    </nav>
+
+    <script src="../assets/js/sebaran.js"></script>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
